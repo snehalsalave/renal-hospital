@@ -1,13 +1,14 @@
 <?php
 if($_SERVER['REQUEST_METHOD']== "POST")
 {
+    $branchId = !empty($_POST['branch']) ? $_POST['branch'] : 0;
 // $id=$_SERVER['id'];
 include("../connect.php");
-$sql="update user set userName='".$_POST['name']."',userEmail='".$_POST['email']."',mobileNumber='".$_POST['mobile']."',branchId='".$_POST['branch']."',
+$sql="update user set userName='".$_POST['name']."',userEmail='".$_POST['email']."',mobileNumber='".$_POST['mobile']."',branchId='".$branchId."',
 userType='".$_POST['userType']."'where id='".$_POST['id']."'";
 // echo $sql;die;
 $res=mysqli_query($con,$sql);
-if(mysqli_affected_rows($con))
+if(!mysqli_error($con))
 {
     $_SESSION['success-msg']=$_POST['name'].'User Update Successfully';
     echo json_encode(["status"=>"success","msg"=>"user updated successfully"]);

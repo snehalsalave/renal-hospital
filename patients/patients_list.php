@@ -14,7 +14,7 @@
 <div class="container">
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/patients/patients_add.php?type=staff">Add patient </a> &nbsp;&nbsp;
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/patients/patients_add.php?type=staff">Add patient </a> &nbsp;&nbsp;
    
         <section id="content">
        <?php
@@ -87,7 +87,7 @@ function funDelete(id)
                 {
                     $('.notification').show();
                     $('.notification').html(res.msg);
-                    window.location='/renal-project/patients/patients_list.php';        
+                    window.location='/renal-hospital/patients/patients_list.php';        
         }else{
             $('.notification').show();
             $('.notification').html(res.msg);

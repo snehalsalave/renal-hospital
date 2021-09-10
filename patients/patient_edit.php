@@ -24,7 +24,7 @@ if(isset($_REQUEST['id']) && !empty($_REQUEST['id']))
 <body>
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/branch/branch_add.php">Add Branch </a>
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/branch/branch_add.php">Add Branch </a>
 
         <section id="content">
 <div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert"></div>
@@ -70,15 +70,9 @@ while($Data=mysqli_fetch_assoc($res)) { ?>
                     <?php } ?>
                 </select>
             </div>
-<!-- <div class="container">
-<div class="form-group">
-<label>patient UserId</label>
-<input type="text" class="form-control" name="userid" id="userid" value="<?php //echo $row['userId'];?>">
-</div>
-</div> -->
 
 <div class="container">
-<input type="submit" name="submit" class="btn btn-success form-control" value="Patients Add">
+<input type="submit" name="submit" class="btn btn-success form-control" value="UPDATE">
 </div>
 <script>
 $(document).ready(function(){
@@ -95,7 +89,7 @@ $(document).ready(function(){
                 {
                     $('.notification').show();
                     $('.notification').html(res.msg);
-                    window.location="/renal-project/patients/patients_list.php";  
+                    window.location="/renal-hospital/patients/patients_list.php";  
                 }else{
                     $('.notification').show();
                     $('.notification').html(res.msg);

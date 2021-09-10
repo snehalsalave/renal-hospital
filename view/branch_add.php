@@ -12,7 +12,7 @@
     <body>
         <?php include('../view/header.php'); ?>
         <section id="main">
-        <a class="btn btn-primary pull-right" href="/renal-project/admin/branch_add.php">Add Branch </a>
+        <a class="btn btn-primary pull-right" href="/renal-hospital/admin/branch_add.php">Add Branch </a>
      
      <section id="content">
     <div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert">

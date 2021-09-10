@@ -13,7 +13,7 @@
 <body>
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/branch/branch_add.php">Add Branch </a>
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/branch/branch_add.php">Add Branch </a>
 
         <section id="content">
 <div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert"></div>
@@ -23,28 +23,28 @@
 <h3>patient Add</h3>
 <div class="form-group">
 <label>patient Name</label>
-<input type="text" class="form-control" name="name" id="name" value="">
+<input type="text" class="form-control" name="name" id="name">
 </div>
 </div>
 
 <div class="container">
 <div class="form-group">
 <label>patient Mobile</label>
-<input type="text" class="form-control" name="mobile" id="mobile" value="">
+<input type="text" class="form-control" name="mobile" id="mobile">
 </div>
 </div>
 
 <div class="container">
 <div class="form-group">
 <label>patient  date Birth</label>
-<input type="text" class="form-control" name="dob" id="dob" value="">
+<input type="text" class="form-control" name="dob" id="dob">
 </div>
 </div>
 
 <div class="container">
 <div class="form-group">
 <label>patient UserName</label>
-<input type="text" class="form-control" name="userid" id="userid" value="">
+<input type="text" class="form-control" name="userid" id="userid">
 </div>
 </div>
 
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 {
                     $('.notification').show();
                     $('.notification').html(res.msg);
-                    window.location="/renal-project/patients/patients_list.php";
+                    window.location="/renal-hospital/patients/patients_list.php";
                 }else{
                     $('.notification').show();
                     $('.notification').html(res.msg);

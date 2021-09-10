@@ -25,7 +25,7 @@ if(isset($_REQUEST['id']) && ($_REQUEST['id']))
 <div class="container">
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/branch/branch_add.php">Add Branch </a>
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/branch/branch_add.php">Add Branch </a>
 
         <section id="content">
 
@@ -54,7 +54,7 @@ if(isset($_REQUEST['id']) && ($_REQUEST['id']))
 <input type="hidden" name="userType" value="<?php echo $_GET['type']; ?>">
 </br>
 
-<input type="submit"  name="submit" class="btn btn-success form-control" value="ADD">
+<input type="submit"  name="submit" class="btn btn-success form-control" value="UPDATE">
 </div>
 </div>
 <script>
@@ -72,7 +72,7 @@ $(document).ready(function(){
              {
                  $('.notification').show();
                  $('.notification').html(res.msg);
-                 window.location="/renal-project/branch/branch_list.php";
+                 window.location="/renal-hospital/branch/branch_list.php";
              }else{
                 $('.notification').show();
                  $('.notification').html(res.msg);

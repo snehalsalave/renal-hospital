@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <?php include('../view/header.php'); ?>
-        <a class="btn btn-primary pull-right" href="/renal-project/branch/branch_add.php">Add Branch </a>
+        <a class="btn btn-primary pull-right" href="/renal-hospital/branch/branch_add.php">Add Branch </a>
 
         <div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert"></div>
         <form id="frmbranch" action="javascript:void(0)" method="POST">
@@ -55,7 +55,7 @@
                                                     $('.notification').show();
                                                     $('.notification').html(res.msg);
                                                     window.location =
-                                                        "/renal-project/branch/branch_list.php";
+                                                        "/renal-hospital/branch/branch_list.php";
                                                 } else {
                                                     $('.notification').show();
                                                     $('.notification').html(res.msg);

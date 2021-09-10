@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php session_start();
+// print_r($_SESSION);
+if($_SESSION['is_login'] !== true){
+    header("Location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
 </head>
 
 <body>
-
+<div class="container">
     <?php include('view/header.php'); ?>
 
     <section id="main">
@@ -22,7 +27,7 @@
         <?php include('view/footer.php'); ?>
 
     </section>
-
+    </div>
 </body>
 
 </html>

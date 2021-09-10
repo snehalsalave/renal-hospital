@@ -11,7 +11,6 @@ session_start();
      {
          $_SESSION['userEmail'] = $row['userEmail'];
          $_SESSION['userName'] = $row['userName'];
-         $_SESSION['user_password'] = $row['userPassword'];
          $_SESSION['success_msg'] = $row['userType'] .' User Login Sucessfully';
          $_SESSION['userType'] =  $row['userType'];
          $_SESSION['userStatus'] =  $row['status'];

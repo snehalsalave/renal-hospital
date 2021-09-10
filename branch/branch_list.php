@@ -11,13 +11,11 @@
 </head>
 
 <body>
-<div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert"></div>
-
 <div class="container">
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/branch/branch_add.php?type=admin">Add branch </a> &nbsp;&nbsp;
-    <a class="btn btn-success pull-right"  href="/renal-project/admin/admin_add.php?type=staff">Add staff </a> &nbsp;&nbsp;
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/branch/branch_add.php?type=admin">Add branch </a> &nbsp;&nbsp;
+    <a class="btn btn-success pull-right"  href="/renal-hospital/admin/admin_add.php?type=staff">Add staff </a> &nbsp;&nbsp;
    
         <section id="content">
        <?php
@@ -25,6 +23,8 @@
         $sql="select * from branch";
         $res=mysqli_query($con,$sql);
         ?>
+        <div class="alert alert-success notification" data-dismiss="alert" aria-label="Close" role="alert"></div>
+
         <table  class="table table-dark table-hover">
         <?php
         if(mysqli_num_rows($res)>0)
@@ -62,6 +62,7 @@
     </section>
 </div>
 <script>
+    $('.notification').hide();
 function fundelete(id)
 {
     var x=confirm("do you want to delete");
@@ -79,7 +80,7 @@ function fundelete(id)
                 {
                $('.notification').show();
                $('.notification').html(res.msg);
-               window.location="/renal-project/branch/branch_list.php";
+               window.location="/renal-hospital/branch/branch_list.php";
                 }else{
                $('.notification').show();
                $('.notification').html(res.msg);   

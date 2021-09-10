@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start();
+if($_SESSION['userType'] !== 'admin'){
+    header('Location: ../login.php');
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +17,8 @@
 <div class="container">
     <?php include('../view/header.php'); ?>
     <section id="main">
-    <a class="btn btn-primary pull-right"  href="/renal-project/admin/admin_add.php?type=admin">Add Admin </a> &nbsp;&nbsp;
-    <a class="btn btn-success pull-right"  href="/renal-project/admin/admin_add.php?type=doctor">Add Doctor </a>
+    <a class="btn btn-primary pull-right"  href="/renal-hospital/admin/admin_add.php?type=admin">Add Admin </a> &nbsp;&nbsp;
+    <a class="btn btn-success pull-right"  href="/renal-hospital/admin/admin_add.php?type=doctor">Add Doctor </a>
         <section id="content">
        <?php
         include("../connect.php");
@@ -24,7 +27,7 @@
                 b.branchName
             FROM
                 USER u
-            RIGHT JOIN branch b ON
+            LEFT JOIN branch b ON
                 u.branchId = b.id";
         $res=mysqli_query($con,$sql);
         ?>
@@ -50,7 +53,7 @@
         <td><?php echo $row['userName']; ?></td>
         <td><?php echo $row['userEmail']; ?></td>
         <td><?php echo $row['mobileNumber']; ?></td>
-        <td><?php echo $row['branchName']; ?></td>
+        <td><?php echo (!empty($row['branchName']) ? $row['branchName'] : '-'); ?></td>
         <td><?php echo $row['userType']; ?></td>
         <td>
         <a class="btn btn-primary" href="admin_edit.php?id=<?php echo $row['id'].'&?type='.$row['userType']; ?>">Edit</a>
@@ -88,7 +91,7 @@ function fundelete(id)
                 {
                $('.notification').show();
                $('.notification').html(res.msg);
-               window.location="/renal-project/admin/admin_list.php";
+               window.location="/renal-hospital/admin/admin_list.php";
                 }else{
                $('.notification').show();
                $('.notification').html(res.msg);   
