@@ -15,7 +15,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST')
      }
      else{
       session_destroy();
-      echo json_encode(["status"=>"fail", "msg"=>"User Not insert Sucessfully"]);
+      echo json_encode(["status"=>"pass", "msg"=>"User Not insert Sucessfully"]);
      }
  }else{
     echo json_encode(["status"=>"fail", "msg"=>"Please add data in required fields."]);
